@@ -4,16 +4,8 @@ import axios from "axios";
 import SearchBar from "./assets/Components/search";
 import UserDetails from "./assets/Components/userDetails";
 import {
-  Heading,
-  Stack,
-  Box,
-  Text,
-  StackDivider,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-} from "@chakra-ui/react";
+  ArrowRightIcon
+} from '@chakra-ui/icons';
 import { Link, NavLink, Route, Routes, useNavigate } from "react-router-dom";
 
 function App() {
@@ -78,94 +70,62 @@ function App() {
       navigate("/about");
     };
 
-    function SearchBar() {
-      const [query, setQuery] = React.useState("");
-      const input = document.querySelector(".search");
-      // console.log(input.value)
-
-      return (
-        <section>
-          <div>
-            <input
-              type="text"
-              className="search"
-              placeholder="enter search"
-              // value={query}
-              onChange={(event) => setQuery(event.target.value)}
-            />
-            {/* <button onClick={event=>setQuery(input.value)}>search</button> */}
-          </div>
-          <div className="box">
-            {newState
-              .filter((post) => {
-                if (query === "") {
-                  return
-                } else if (
-                  post.name.toLowerCase().includes(query.toLowerCase())
-                ) {
-                  return post;
-                }
-              })
-              .map((post, index) => {
-                return (
-                  <div key={index}>
-                    <p>{post.name}</p>
-                  </div>
-                );
-              })}
-          </div>
-        </section>
-      );
-    }
-
     return (
-      <>
+      <div className="container">
         <section className="home-container">
           <SearchBar />
           <div className="main">
-            <div className="repos">
-              <Card>
-                <CardHeader>
-                  <Heading size="md">My GitHub Repos</Heading>
-                </CardHeader>
-
-                <CardBody>
-                  <Box>
-                    {newState.map((app) => {
-                      return (
-                        <Stack divider={<StackDivider />} spacing="4">
-                          <div className="git-names">
-                            <Text pt="2" fontSize="sm">
-                              <a href={app.html_url}>{app.name}</a>
-                            </Text>
-                          </div>
-                        </Stack>
-                      );
-                    })}
-                  </Box>
-                </CardBody>
-              </Card>
+            <div className="state">
+              <h3>My Git Respository</h3>
+              <hr></hr>
+              <br></br>
+              <h1>{state.name}</h1>
+              <br></br>
+              <button onClick={handleNavigate}>Explore</button>
+              <br></br>
             </div>
-            <Card>
-              <CardBody>
-                <div className="state">
-                  <Heading>
-                    <h1>{state.name}</h1>
-                  </Heading>
-                  <br></br>
-                  <button onClick={handleNavigate}>Explore</button>
-                  <br></br>
-                </div>
-              </CardBody>
-            </Card>
+            <br></br>
+            
+            <ArrowRightIcon onClick={next} boxSize={4} />
           </div>
-            <div className="btn-element">
-              <button className="next" onClick={next}>
-                next
-              </button>
-            </div>
         </section>
-      </>
+      </div>
+    );
+  }
+
+  function SearchBar() {
+    const [query, setQuery] = React.useState("");
+
+    return (
+      <section>
+        <div>
+          <input
+            type="text"
+            className="search"
+            placeholder="enter search"
+            onChange={(event) => setQuery(event.target.value)}
+          />
+        </div>
+        <div className="box">
+          {newState
+            .filter((post) => {
+              if (query === "") {
+                return post;
+              } else if (
+                post.name.toLowerCase().includes(query.toLowerCase())
+              ) {
+                return post;
+              }
+            })
+            .map((post, index) => {
+              return (
+                <div className="post" key={index}>
+                  <p className="post"><a href={post.html_url}>{post.name}</a></p>
+                </div>
+              );
+            })}
+        </div>
+      </section>
     );
   }
 

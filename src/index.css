@@ -54,8 +54,57 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.navigate{
-  color:#646cff;
+
+.home-container{
+  margin-top: 20vh;
+  border: #ccc solid 1px;
+  padding-inline: 20px ;
+  padding-block: 50px 20px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.state{
+  border: #ccc solid 1px;
+  margin-left: 50px;
+  padding-block: 20px;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.state h1{
+   font-weight: 700;
+   font-size: 1.8em;
+}
+
+.state button{
+  background: white;
+  padding: 5px;
+  font-size: xx-small;
+}
+
+.search{
+  margin-top: 30px;
+  outline: #009879 1px solid;
+  padding-left: 5px;
+}
+
+.search:focus{
+  outline: #535bf2 1px solid;
+}
+
+.box{
+  padding: 10px 20px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.post{
+  padding: 5px;
+  background: #b3b6e0;
+  margin-top: 2px;
+  width: fit-content;
+  color: white;
 }
 
 .details{
@@ -86,20 +135,7 @@ button:focus-visible {
   background-color: #f3f3f3;
 }
 
-.state{
-  margin: 0 auto;
-  max-height: 40vh;
-  overflow: auto;
-}
 
-.repos{
-  text-align: left;
-  max-height: 300px;
-  width: 150px;
-  padding-left: 10px;
-  overflow: auto;
-  background: #fff;
-}
 
 .details tbody tr:last-of-type{
   border-bottom: 2px solid #009879;
@@ -117,34 +153,11 @@ button:focus-visible {
   color: blueviolet
 }
 
-.main{
-  /* border: 3px solid #1c1d85; */
-  width: 100vw;
-  padding: 50px 0;
-  /* border-radius: 10px; */
-  margin-top: 20px;
-  background-color: #080808;
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-}
-
-.git-names{
-  font-weight: bold;
-  margin-bottom: 6px;
-  color: #747bff; 
-  border-bottom: #ccc solid 1px;
-}
-
 .btn-element{
   display: flex;
   width: 100%;
   justify-content: center;
 }
-
-/* .box{
-  height: 20px;
-  overflow: hidden;
-} */
 
 @media (prefers-color-scheme: light) {
   :root {
