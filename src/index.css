@@ -95,7 +95,7 @@ button:focus-visible {
 .repos{
   text-align: left;
   max-height: 300px;
-  width: 250px;
+  width: 150px;
   padding-left: 10px;
   overflow: auto;
   background: #fff;
@@ -158,3 +158,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* @media(min-width: 300px) {
+  .main{
+    display: block;
+  }
+} */
