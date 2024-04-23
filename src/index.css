@@ -60,6 +60,7 @@ button:focus-visible {
   border: #ccc solid 1px;
   padding-inline: 20px ;
   padding-block: 50px 20px;
+  background-color: #1a1a1ad7;
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
@@ -67,9 +68,12 @@ button:focus-visible {
 .state{
   border: #ccc solid 1px;
   margin-left: 50px;
-  padding-block: 20px;
+  /* font-size: 0.8em; */
+  padding: 10px 20px;
   border-radius: 10px;
   background: #f9f9f9;
+  height: 15rem;
+  width: 80vw;
 }
 
 .state h1{
@@ -84,7 +88,7 @@ button:focus-visible {
 }
 
 .search{
-  margin-top: 30px;
+  margin-block: 0 30px;
   outline: #009879 1px solid;
   padding-left: 5px;
 }
@@ -93,18 +97,23 @@ button:focus-visible {
   outline: #535bf2 1px solid;
 }
 
-.box{
+.search-box{
+  height: 250px;
+  width: 20vw;
   padding: 10px 20px;
-  height: 200px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .post{
-  padding: 5px;
-  background: #b3b6e0;
-  margin-top: 2px;
+  color: red;
+  background-color: whitesmoke;
+  margin-block: 7px;
+  padding:8px 15px;
+  font-size: 12px;
   width: fit-content;
-  color: white;
+  border-radius: 10px;
+  border: #1a1a1a 2px solid;
+  box-shadow: #b8b4b4 2px 2px 2px;
 }
 
 .details{

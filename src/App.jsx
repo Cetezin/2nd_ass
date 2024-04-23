@@ -86,7 +86,7 @@ function App() {
             </div>
             <br></br>
             
-            <ArrowRightIcon onClick={next} boxSize={4} />
+            <ArrowRightIcon onClick={next} color="white" boxSize={4} />
           </div>
         </section>
       </div>
@@ -97,7 +97,7 @@ function App() {
     const [query, setQuery] = React.useState("");
 
     return (
-      <section>
+      <section className="search-box">
         <div>
           <input
             type="text"
@@ -120,7 +120,7 @@ function App() {
             .map((post, index) => {
               return (
                 <div className="post" key={index}>
-                  <p className="post"><a href={post.html_url}>{post.name}</a></p>
+                  <p><a href={post.html_url}>{post.name}</a></p>
                 </div>
               );
             })}
