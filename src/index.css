@@ -42,7 +42,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -54,31 +54,30 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-
 .home-container{
   margin-top: 20vh;
-  border: #ccc solid 1px;
   padding-inline: 20px ;
   padding-block: 50px 20px;
-  background-color: #1a1a1ad7;
+  background-color: #01423e;
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
 
 .state{
   border: #ccc solid 1px;
-  margin-left: 50px;
-  /* font-size: 0.8em; */
+  margin-inline: 30px 20px;
+  overflow: auto;
   padding: 10px 20px;
   border-radius: 10px;
   background: #f9f9f9;
   height: 15rem;
-  width: 80vw;
+  width: 60vw;
 }
 
 .state h1{
    font-weight: 700;
-   font-size: 1.8em;
+   font-size: 3em;
+   color: #2d4843;
 }
 
 .state button{
@@ -102,18 +101,24 @@ button:focus-visible {
   width: 20vw;
   padding: 10px 20px;
   overflow: auto;
+  background-color: whitesmoke;
 }
 
 .post{
-  color: red;
+  color: #00231d;
   background-color: whitesmoke;
   margin-block: 7px;
   padding:8px 15px;
   font-size: 12px;
   width: fit-content;
   border-radius: 10px;
-  border: #1a1a1a 2px solid;
+  /* border: #1a1a1a 2px solid; */
   box-shadow: #b8b4b4 2px 2px 2px;
+}
+
+.arrow-btn{
+  display: flex;
+  justify-content: space-around;
 }
 
 .details{
@@ -144,22 +149,12 @@ button:focus-visible {
   background-color: #f3f3f3;
 }
 
-
-
 .details tbody tr:last-of-type{
   border-bottom: 2px solid #009879;
 }
 
 .home-button{
   margin-block: 40px;
-}
-
-.next{
-  margin-top: 30px;
-  background: whitesmoke;
-  width: fit-content;
-  padding-inline: 20px;
-  color: blueviolet
 }
 
 .btn-element{
@@ -181,8 +176,8 @@ button:focus-visible {
   }
 }
 
-/* @media(min-width: 300px) {
-  .main{
-    display: block;
+@media(max-width: 300px) {
+  .state h1{
+    font-size: 22px;
   }
-} */
+}

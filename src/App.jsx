@@ -3,8 +3,9 @@ import "./App.css";
 import axios from "axios";
 import SearchBar from "./assets/Components/search";
 import UserDetails from "./assets/Components/userDetails";
+// import ErrorBoundary from "./assets/Components/ErrorBoundary"
 import {
-  ArrowRightIcon
+  ArrowRightIcon, ArrowLeftIcon
 } from '@chakra-ui/icons';
 import { Link, NavLink, Route, Routes, useNavigate } from "react-router-dom";
 
@@ -81,12 +82,14 @@ function App() {
               <br></br>
               <h1>{state.name}</h1>
               <br></br>
-              <button onClick={handleNavigate}>Explore</button>
+              <button className="explore" onClick={handleNavigate}>Explore</button>
               <br></br>
             </div>
             <br></br>
-            
+            <div className="arrow-btn">  
+            <ArrowLeftIcon onClick={next} color="white" boxSize={4} />
             <ArrowRightIcon onClick={next} color="white" boxSize={4} />
+            </div>
           </div>
         </section>
       </div>
@@ -170,6 +173,15 @@ function App() {
       setPosition(0);
     }
   }
+
+  function prev(e) {
+    e.preventDefault();
+    setPosition((prev) => prev - 1);
+    if (position < 1) {
+      setPosition(14);
+    }
+  }
+
 
   return (
     <section className="container">
